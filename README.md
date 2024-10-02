@@ -2,6 +2,8 @@
 
 A flag-themed card matching game where users flip cards to find matching pairs. The game features a timer, which tracks the player's progress, and control buttons to play, pause, or reset the timer.
 
+## deployed Project link:
+
 ## Features
 
 * 6x6 grid with 36 cards (18 unique flag images, each appearing twice).
