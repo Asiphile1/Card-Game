@@ -2,7 +2,7 @@
 
 A flag-themed card matching game where users flip cards to find matching pairs. The game features a timer, which tracks the player's progress, and control buttons to play, pause, or reset the timer.
 
-# # Features
+## Features
 
 * 6x6 grid with 36 cards (18 unique flag images, each appearing twice).
 * Responsive design for smooth gameplay across devices.
@@ -20,38 +20,29 @@ A flag-themed card matching game where users flip cards to find matching pairs. 
 management.
 
 
-# # Setup and Installation
+## Setup and Installation
 
-# # Clone the repository:
+## Clone the repository:
 
 * git clone https://github.com/your-username/Randomized-card-matching-game.git
 
 
-# # Navigate to the project directory:
+## Navigate to the project directory:
 
 * cd randomized-card-matching-game
 
 
-# # Open the index.html file in a web browser:
+## Open the index.html file in a web browser:
 
 * open index.html
 
 
-# # Project Structure
+## Project Structure
 
-card-matching-game/
-│
-├── index.html         # Main HTML file for the game
-├── style.css          # Contains all the styles for the game
-├── script.js          # JavaScript file for the game logic
-├── flags/             # Folder containing all the flag images
-│   ├── flag1.jpg
-│   ├── flag2.jpg
-│   └── ... 
-└── README.md          # Project documentation
+card-matching-game/ │ ├── index.html # Main HTML file for the game ├── style.css # Contains all the styles for the game ├── script.js # JavaScript file for the game logic ├── flags/ # Folder containing all the flag images │ ├── flag1.jpg │ ├── flag2.jpg │ └── ... └── README.md # Project documentation
 
 
-# # How to Play
+## How to Play
 
 * Start the Game: Click any card to start the game. The timer will automatically begin when the first card is flipped.
 * Flip Cards: Click on a card to reveal its flag. Then, click another card to find its match.
@@ -59,7 +50,7 @@ card-matching-game/
 * Win Condition: The game is won when all 18 pairs of cards are matched. A victory message will be displayed.
 * Reset the Game: Click the reset button to shuffle the cards and start a new game. The timer will reset as well.
 
-# # Game Controls
+## Game Controls
 
 * Play Button: Starts or resumes the timer.
 * Pause Button: Pauses the timer.
@@ -67,7 +58,7 @@ card-matching-game/
 * Reset Button: Restarts the game with a new shuffle of the cards and resets the timer.
 
 
-# # Detailed Code Overview
+## Detailed Code Overview
 
 * Timer Logic
 ** The game includes a digital timer, displayed in MM
