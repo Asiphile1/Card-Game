@@ -37,14 +37,56 @@ const flagImages = [
   
   // Generate and display the cards
   const gameBoard = document.getElementById("gameBoard");
-  shuffledCards.forEach((image, index) => {
+  shuffledCards.forEach((image) => {
     const card = document.createElement("div");
     card.classList.add("card");
     card.dataset.image = image;
-    // card.style.backgroundImage = "url('question-mark.png')";
     card.addEventListener("click", handleCardClick);
     gameBoard.appendChild(card);
   });
+  
+  // Timer variables
+  let timerInterval;
+  let seconds = 0;
+  let isTimerRunning = false;
+  
+  // Format time in MM:SS format
+  function formatTime(sec) {
+    const minutes = Math.floor(sec / 60);
+    const remainingSeconds = sec % 60;
+    return `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
+  }
+  
+  // Start timer
+  function startTimer() {
+    if (!isTimerRunning) {
+      isTimerRunning = true;
+      timerInterval = setInterval(() => {
+        seconds++;
+        document.getElementById("timerDisplay").textContent = formatTime(seconds);
+      }, 1000);
+    }
+  }
+  
+  // Pause timer
+  function pauseTimer() {
+    clearInterval(timerInterval);
+    isTimerRunning = false;
+  }
+  
+  // Stop timer
+  function stopTimer() {
+    clearInterval(timerInterval);
+    isTimerRunning = false;
+    seconds = 0;
+    document.getElementById("timerDisplay").textContent = "00:00";
+  }
+  
+  // Add event listeners for the play, pause, and stop buttons
+  document.getElementById("playBtn").addEventListener("click", startTimer);
+  document.getElementById("pauseBtn").addEventListener("click", pauseTimer);
+  document.getElementById("stopBtn").addEventListener("click", stopTimer);
+  
   
   // Variables to track game state
   let firstCard, secondCard;
@@ -64,6 +106,9 @@ const flagImages = [
     if (!hasFlippedCard) {
       hasFlippedCard = true;
       firstCard = clickedCard;
+      if (!isTimerRunning) {
+        startTimer(); // Start the timer when the first card is flipped
+      }
     } else {
       secondCard = clickedCard;
       checkForMatch();
@@ -115,18 +160,20 @@ const flagImages = [
     );
   
     if (allMatched) {
-      document.getElementById("winMessage").classList.remove("hidden");
+        document.getElementById("winMessage").classList.remove("hidden");
+        pauseTimer(); // Stop the timer when the game is won
+      }
     }
-  }
   
   // Reset the game when the reset button is clicked
   document.getElementById("resetBtn").addEventListener("click", () => {
+    stopTimer(); // Reset the timer
     document.getElementById("winMessage").classList.add("hidden");
     gameBoard.innerHTML = "";
     const reshuffledCards = shuffle(cardImages);
     reshuffledCards.forEach((image) => {
       const card = document.createElement("div");
-      card.classList.add("card",);
+      card.classList.add("card");
       card.dataset.image = image;
       card.style.backgroundImage = "url('question-mark.png')";
       card.addEventListener("click", handleCardClick);
