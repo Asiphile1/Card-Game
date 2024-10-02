@@ -1,23 +1,23 @@
 // Array to store the paths of flag images
 const flagImages = [
-    "flags/flag1.png",
-    "flags/flag2.png",
-    "flags/flag3.png",
-    "flags/flag4.png",
-    "flags/flag5.png",
-    "flags/flag6.png",
-    "flags/flag7.png",
-    "flags/flag8.png",
-    "flags/flag9.png",
-    "flags/flag10.png",
-    "flags/flag11.png",
-    "flags/flag12.png",
-    "flags/flag13.png",
-    "flags/flag14.png",
-    "flags/flag15.png",
-    "flags/flag16.png",
-    "flags/flag17.png",
-    "flags/flag18.png",
+    "flags/flag1.jpg",
+    "flags/flag2.jpg",
+    "flags/flag3.jpg",
+    "flags/flag4.jpg",
+    "flags/flag5.jpg",
+    "flags/flag6.jpg",
+    "flags/flag7.jpg",
+    "flags/flag8.jpg",
+    "flags/flag9.jpg",
+    "flags/flag10.jpg",
+    "flags/flag11.jpg",
+    "flags/flag12.jpg",
+    "flags/flag13.jpg",
+    "flags/flag14.jpg",
+    "flags/flag15.jpg",
+    "flags/flag16.jpg",
+    "flags/flag17.jpg",
+    "flags/flag18.jpg",
   ];
   
   // Create card pairs with flag images
@@ -89,7 +89,7 @@ const flagImages = [
     resetBoard();
   }
   
-  // Unflip the cards if they don't match
+  // unflip the cards if they don't match
   function unflipCards() {
     lockBoard = true;
     setTimeout(() => {
@@ -126,13 +126,17 @@ const flagImages = [
     const reshuffledCards = shuffle(cardImages);
     reshuffledCards.forEach((image) => {
       const card = document.createElement("div");
-      card.classList.add("card", "hidden");
+      card.classList.add("card",);
       card.dataset.image = image;
       card.style.backgroundImage = "url('question-mark.png')";
       card.addEventListener("click", handleCardClick);
       gameBoard.appendChild(card);
     });
   });
+
+
+
+
   
   // let cardValues = [];
   // let firstCard, secondCard;
