@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Guessing Game - Welcome</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="background-vid">
+    <!-- Background Video
+    <video autoplay muted loop id="bgVideo">
+      <source src="background-video.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video> -->
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <h1>Welcome to the Card Guessing Game</h1>
+      <p>Rules of the Game:</p>
+      <ul>
+        <li>Match pairs of cards to win the game.</li>
+        <li>Click two cards to reveal the flags.</li>
+        <li>If they match, they stay revealed. If not, they will hide again.</li>
+        <li>Continue until all pairs are matched.</li>
+        <li>LET THE GAMES BEGIN. </li>
+      </ul>
+      <button id="startGameBtn">Start Game</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('startGameBtn').addEventListener('click', function() {
+      window.location.href = 'game.html'; // Navigate to the game page
+    });
+  </script>
+
+</body>
+</html>
